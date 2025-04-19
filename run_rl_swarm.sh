@@ -334,8 +334,8 @@ fi
 echo -e "${CYAN}${BOLD}[✓] Installing required Python packages, may take few mins depending on your internet speed...${NC}"
 pip install --disable-pip-version-check -q -r "$ROOT"/requirements-hivemind.txt > /dev/null
 pip install --disable-pip-version-check -q -r "$ROOT"/requirements.txt > /dev/null
-pip uninstall -y protobuf
-pip install --disable-pip-version-check -q "protobuf==5.26.0"
+#pip uninstall -y protobuf
+#pip install --disable-pip-version-check -q "protobuf==5.26.0"
 
 echo -e "${GREEN}${BOLD}>>> Awesome, All packages installed successfully!\n${NC}"
 
