@@ -340,17 +340,17 @@ pip install --disable-pip-version-check -q -r "$ROOT"/requirements.txt > /dev/nu
 echo -e "${GREEN}${BOLD}>>> Awesome, All packages installed successfully!\n${NC}"
 
 if [ -z "$CONFIG_PATH" ]; then
-    if command -v nvidia-smi &> /dev/null || [ -d "/proc/driver/nvidia" ]; then
-        echo -e "${GREEN}${BOLD}[✓] GPU detected, using GPU configuration${NC}"
-        CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
-        echo -e "${CYAN}${BOLD}[✓] Config file : ${BOLD}$CONFIG_PATH\n${NC}"
-        echo -e "${CYAN}${BOLD}[✓] Installing GPU-specific requirements, may take few mins depending on your internet speed...${NC}"
-        pip install --disable-pip-version-check -q -r "$ROOT"/requirements_gpu.txt
-    else
-        echo -e "${YELLOW}${BOLD}[✓] No GPU detected, using CPU configuration${NC}"
-        CONFIG_PATH="$ROOT/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
-        echo -e "${CYAN}${BOLD}[✓] Config file : ${BOLD}$CONFIG_PATH\n${NC}"
-    fi
+    #if command -v nvidia-smi &> /dev/null || [ -d "/proc/driver/nvidia" ]; then
+    #    echo -e "${GREEN}${BOLD}[✓] GPU detected, using GPU configuration${NC}"
+    #    CONFIG_PATH="$ROOT/hivemind_exp/configs/gpu/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
+    #    echo -e "${CYAN}${BOLD}[✓] Config file : ${BOLD}$CONFIG_PATH\n${NC}"
+    #    echo -e "${CYAN}${BOLD}[✓] Installing GPU-specific requirements, may take few mins depending on your internet speed...${NC}"
+    #    pip install --disable-pip-version-check -q -r "$ROOT"/requirements_gpu.txt
+    #else
+    echo -e "${YELLOW}${BOLD}[✓] No GPU detected, using CPU configuration${NC}"
+    CONFIG_PATH="$ROOT/hivemind_exp/configs/mac/grpo-qwen-2.5-0.5b-deepseek-r1.yaml"
+    echo -e "${CYAN}${BOLD}[✓] Config file : ${BOLD}$CONFIG_PATH\n${NC}"
+    #fi
 fi
 
 
